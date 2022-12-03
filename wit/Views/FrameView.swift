@@ -9,16 +9,14 @@ import SwiftUI
 
 struct FrameView: View {
     var image: CGImage?
-    private let label = Text("frame")
-    
+
     var body: some View {
         if let image = image {
-            Image(image, scale: 2.0, orientation: .up, label: label)
-                .frame(width: 400, height: 700, alignment: .topLeading)
+            Image(decorative: image, scale: 2.0)
+                //.scaledToFit()
         } else {
-            Color.pink
-                .frame(width: 400, height: 700, alignment: .topLeading)
-
+            Image("defaultImage")
+                .scaledToFit()
         }
     }
 }
